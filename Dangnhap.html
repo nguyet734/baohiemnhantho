@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Đăng nhập</title>
+  <style>
+    body {
+      font-family: Arial;
+      background-color: #f5f5dc;
+      padding: 40px;
+    }
+    form {
+      max-width: 400px;
+      margin: auto;
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    input[type="text"], input[type="password"] {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    button {
+      width: 100%;
+      padding: 12px;
+      background-color: #ff6600;
+      color: white;
+      font-weight: bold;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #0d7d8a;
+    }
+  </style>
+</head>
+<body>
+  <form onsubmit="return goToMain()">
+    <h2>Đăng nhập</h2>
+    <input type="text" placeholder="Tên đăng nhập" required>
+    <input type="password" placeholder="Mật khẩu" required>
+    <label>
+      <input type="checkbox"> Ghi nhớ tài khoản
+    </label>
+    <br><br>
+    <button type="submit">Đăng nhập</button>
+  </form>
+
+  <script>
+    function goToMain() {
+      // Kiểm tra hợp lệ hoặc thêm xử lý đăng nhập nếu cần
+      localStorage.setItem('isLoggedIn', 'true'); // Lưu trạng thái đăng nhập
+      window.location.href = "Nhan-tho.html";  // ← Đảm bảo file này tồn tại
+      return false; // Ngăn submit form mặc định
+    }
+  </script>
+</body>
+</html>
